@@ -1,0 +1,211 @@
+:root {
+  --bg: #FFF7F3;
+  --blush: #F8E1DE;
+  --photo-bg: #F3D9D6;
+  --rose: #D98E96;
+  --rose-l: #EDB8BD;
+  --deep: #8E4A55;
+  --text: #5B3A40;
+  --gold: #C9A46A;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Montserrat", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: #F3E4E0;
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg);
+  overflow: hidden;
+  min-height: 100vh;
+  box-shadow: 0 0 60px rgba(142, 74, 85, .08);
+}
+
+/* ---------- декор ---------- */
+.corner-wrap { position: absolute; width: 150px; pointer-events: none; }
+.corner-wrap svg { display: block; width: 100%; height: auto; }
+.tl  { top: -20px; left: -20px; width: 170px; }
+.tr  { top: -20px; right: -20px; transform: scaleX(-1); }
+.bl  { bottom: -20px; left: -20px; transform: scaleY(-1); width: 135px; }
+.brc { bottom: -20px; right: -20px; transform: scale(-1, -1); width: 135px; }
+
+.divider { display: flex; align-items: center; justify-content: center; gap: 4px; }
+.divider span { width: 46px; height: 1px; background: var(--gold); }
+.div-flower { width: 24px; height: 24px; }
+
+.sm-flower { width: 48px; height: auto; display: block; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  min-height: 560px;
+  padding: 190px 24px 40px;
+  text-align: center;
+  background: linear-gradient(var(--blush), var(--bg));
+}
+
+.eyebrow {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--rose-l);
+  margin-bottom: 22px;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(32px, 9vw, 40px);
+  line-height: 1.2;
+  color: var(--deep);
+  margin-bottom: 34px;
+}
+
+.subtitle {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.scroll-hint {
+  display: block;
+  margin-top: 40px;
+  color: var(--rose);
+  font-size: 14px;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+/* ---------- стих ---------- */
+.poem-card {
+  position: relative;
+  margin: 64px 19px 0;
+  padding: 50px 10px 44px;
+  background: #fff;
+  border: 1px solid var(--rose-l);
+  border-radius: 24px;
+}
+.card-flower { position: absolute; top: -14px; right: 0; }
+
+.poem {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(16px, 4.6vw, 19px);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ---------- фото «бид хоёр» ---------- */
+.us { padding: 50px 0 80px; }
+
+.arch {
+  position: relative;
+  width: 280px;
+  height: 274px;
+  margin: 0 auto;
+}
+.arch-fill, .arch-outline {
+  position: absolute;
+  inset: 0;
+  border-radius: 140px 140px 0 0 / 100px 100px 0 0;
+}
+.arch-fill {
+  background: var(--photo-bg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.arch-outline {
+  transform: translate(12px, 9px);
+  border: 1.2px solid var(--gold);
+}
+.arch-fill img {
+  width: 211px;
+  height: 158px;
+  object-fit: cover;
+  display: block;
+}
+.arch-flowers {
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  width: 95px;
+}
+.arch-flowers svg { width: 100%; height: auto; display: block; }
+
+/* ---------- дочка ---------- */
+.daughter {
+  padding: 50px 0 110px;
+  background: rgba(248, 225, 222, .6);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(26px, 7.4vw, 30px);
+  color: var(--deep);
+  text-align: center;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 24px;
+  margin-top: 60px;
+}
+.frame {
+  position: relative;
+  flex: 1;
+  background: var(--photo-bg);
+  border-radius: 22px;
+  padding: 30px 9px 30px;
+}
+.frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 147 / 184;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+.f1 { padding: 30px 9px 30px; }
+.f2 { margin-top: 53px; padding: 18px 14px 18px; }
+.f2 img { aspect-ratio: 138 / 208; }
+
+.frame-flower { position: absolute; top: -18px; left: -20px; }
+.frame-flower.br { top: auto; left: auto; bottom: -18px; right: -14px; }
+
+.poem-2 { margin-top: 60px; padding: 0 16px; }
+
+/* ---------- footer ---------- */
+.footer {
+  position: relative;
+  padding: 22px 0 60px;
+  text-align: center;
+}
+.date {
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* ---------- появление ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-hint { animation: none; }
+}
